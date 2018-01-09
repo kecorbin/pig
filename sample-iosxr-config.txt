@@ -1,0 +1,24 @@
+telemetry model-driven
+ destination-group dev
+  address-family ipv4 {{ telemetry_host }} port {{ telemetry_port }}
+   encoding self-describing-gpb
+   protocol tcp
+  !
+ !
+ sensor-group QoS
+  sensor-path Cisco-IOS-XR-wdsysmon-fd-oper:system-monitoring/cpu-utilization
+  sensor-path Cisco-IOS-XR-nto-misc-oper:memory-summary/nodes/node/summary
+  sensor-path Cisco-IOS-XR-qos-ma-oper:qos/nodes/node/policy-map/interface-table/interface/output
+ !
+ sensor-group Basic
+  sensor-path Cisco-IOS-XR-wdsysmon-fd-oper:system-monitoring/cpu-utilization
+  sensor-path Cisco-IOS-XR-nto-misc-oper:memory-summary/nodes/node/summary
+  sensor-path Cisco-IOS-XR-infra-statsd-oper:infra-statistics/interfaces/interface/latest/data-rate
+  sensor-path Cisco-IOS-XR-infra-statsd-oper:infra-statistics/interfaces/interface/latest/generic-counters
+ !
+ subscription Sub1
+  sensor-group-id QoS sample-interval 10000
+  sensor-group-id Basic sample-interval 30000
+  destination-id dev
+ !
+!
