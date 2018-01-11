@@ -78,7 +78,6 @@ services:
   grafana:
     image: grafana/grafana:master
     volumes:
-      - ./grafana/data:/var/lib/grafana
       - ./grafana/dashboards:/etc/grafana/dashboards
       - ./grafana/datasources:/etc/grafana/datasources
     ports:
