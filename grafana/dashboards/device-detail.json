@@ -52,7 +52,7 @@
   "gnetId": null,
   "graphTooltip": 0,
   "id": null,
-  "iteration": 1515787368291,
+  "iteration": 1515796760345,
   "links": [],
   "panels": [
     {
@@ -622,7 +622,7 @@
             [
               {
                 "params": [
-                  "bytes-received"
+                  "bytes-sent"
                 ],
                 "type": "field"
               },
@@ -652,7 +652,7 @@
       "thresholds": [],
       "timeFrom": null,
       "timeShift": null,
-      "title": "Bytes Received",
+      "title": "Bytes Sent",
       "tooltip": {
         "shared": true,
         "sort": 0,
@@ -888,7 +888,7 @@
       "thresholds": [],
       "timeFrom": null,
       "timeShift": null,
-      "title": "Packets Received",
+      "title": "Packets Sent",
       "tooltip": {
         "shared": true,
         "sort": 0,
@@ -979,6 +979,6 @@
     ]
   },
   "timezone": "",
-  "title": "Device Details",
-  "version": 8
+  "title": "Device Health",
+  "version": 9
 }
