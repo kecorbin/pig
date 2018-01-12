@@ -1,5 +1,41 @@
 [
 	{
+		"basepath": "Cisco-IOS-XR-ip-rib-ipv4-oper:rib/rib-table-ids/rib-table-id/summary-protos/summary-proto",
+		"spec": {
+			"fields": [
+				{"name": "name", "tag": true},
+				{
+					"name": "proto-route-count",
+				  "fields":
+						[
+							{"name": "active-routes-count"}
+						]
+				}
+			]
+		}
+	},
+	{
+		"basepath" : "Cisco-IOS-XR-procmem-oper:processes-memory/nodes/node/process-ids/process-id",
+		"spec" : {
+			"fields" : [
+				{"name":"node_name", "tag": true},
+				{"name":"name", "tag": true},
+				{"name":"text_seg_size"},
+				{"name":"data_seg_size"},
+				{"name":"stack_seg_size"},
+				{"name":"malloc_size"}
+			]
+		}
+	},
+	{
+		"basepath": "Cisco-IOS-XR-ipv4-ospf-oper:ospf/processes/process/default-vrf/ospf-summary",
+		"spec": {
+			"fields": [
+				{"name": "sa-num-nbrs-up"}
+			]
+		}
+	},
+	{
 		"basepath" : "Cisco-IOS-XR-infra-statsd-oper:infra-statistics/interfaces/interface/latest/generic-counters",
 		"spec" : {
 			"fields" : [

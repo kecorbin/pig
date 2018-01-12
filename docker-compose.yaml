@@ -51,6 +51,7 @@ services:
       - "influxdb:influxdb"
       - "prometheus:promethus"
     volumes:
+      - ./iosxr-pipeline/data:/data
       - ./iosxr-pipeline/config:/etc/pipeline
     depends_on:
       - influxdb
