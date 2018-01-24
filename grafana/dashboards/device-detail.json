@@ -52,7 +52,7 @@
   "gnetId": null,
   "graphTooltip": 0,
   "id": null,
-  "iteration": 1515796760345,
+  "iteration": 1516770522290,
   "links": [],
   "panels": [
     {
@@ -275,7 +275,7 @@
       },
       "gridPos": {
         "h": 4,
-        "w": 5,
+        "w": 4,
         "x": 8,
         "y": 0
       },
@@ -369,7 +369,7 @@
       "gridPos": {
         "h": 4,
         "w": 4,
-        "x": 13,
+        "x": 12,
         "y": 0
       },
       "id": 6,
@@ -414,7 +414,7 @@
           "orderByTime": "ASC",
           "policy": "autogen",
           "query": "SELECT \"proto-route-count__active-routes-count\" FROM \"autogen\".\"Cisco-IOS-XR-ip-rib-ipv4-oper:rib/rib-table-ids/rib-table-id/summary-protos/summary-proto\" WHERE (\"name\" = 'ospf') AND $timeFilter",
-          "rawQuery": false,
+          "rawQuery": true,
           "refId": "A",
           "resultFormat": "time_series",
           "select": [
@@ -438,6 +438,212 @@
       ],
       "thresholds": "",
       "title": "OSPF Routes",
+      "type": "singlestat",
+      "valueFontSize": "80%",
+      "valueMaps": [
+        {
+          "op": "=",
+          "text": "N/A",
+          "value": "null"
+        }
+      ],
+      "valueName": "avg"
+    },
+    {
+      "cacheTimeout": null,
+      "colorBackground": false,
+      "colorValue": false,
+      "colors": [
+        "#299c46",
+        "rgba(237, 129, 40, 0.89)",
+        "#d44a3a"
+      ],
+      "datasource": "influxdb",
+      "format": "none",
+      "gauge": {
+        "maxValue": 100,
+        "minValue": 0,
+        "show": false,
+        "thresholdLabels": false,
+        "thresholdMarkers": true
+      },
+      "gridPos": {
+        "h": 4,
+        "w": 4,
+        "x": 16,
+        "y": 0
+      },
+      "id": 15,
+      "interval": null,
+      "links": [],
+      "mappingType": 1,
+      "mappingTypes": [
+        {
+          "name": "value to text",
+          "value": 1
+        },
+        {
+          "name": "range to text",
+          "value": 2
+        }
+      ],
+      "maxDataPoints": 100,
+      "nullPointMode": "connected",
+      "nullText": null,
+      "postfix": "",
+      "postfixFontSize": "50%",
+      "prefix": "",
+      "prefixFontSize": "50%",
+      "rangeMaps": [
+        {
+          "from": "null",
+          "text": "N/A",
+          "to": "null"
+        }
+      ],
+      "sparkline": {
+        "fillColor": "rgba(31, 118, 189, 0.18)",
+        "full": false,
+        "lineColor": "rgb(31, 120, 193)",
+        "show": true
+      },
+      "tableColumn": "",
+      "targets": [
+        {
+          "groupBy": [],
+          "measurement": "Cisco-IOS-XR-ipv4-bgp-oper:bgp/instances/instance/instance-active/default-vrf/process-info",
+          "orderByTime": "ASC",
+          "policy": "autogen",
+          "refId": "A",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "global__established-neighbors-count-total"
+                ],
+                "type": "field"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "Producer",
+              "operator": "=",
+              "value": "$Device"
+            }
+          ]
+        }
+      ],
+      "thresholds": "",
+      "title": "BGP Peers",
+      "type": "singlestat",
+      "valueFontSize": "80%",
+      "valueMaps": [
+        {
+          "op": "=",
+          "text": "N/A",
+          "value": "null"
+        }
+      ],
+      "valueName": "avg"
+    },
+    {
+      "cacheTimeout": null,
+      "colorBackground": false,
+      "colorValue": false,
+      "colors": [
+        "#d44a3a",
+        "rgba(237, 129, 40, 0.89)",
+        "#299c46"
+      ],
+      "datasource": "influxdb",
+      "format": "none",
+      "gauge": {
+        "maxValue": 100,
+        "minValue": 0,
+        "show": false,
+        "thresholdLabels": false,
+        "thresholdMarkers": true
+      },
+      "gridPos": {
+        "h": 4,
+        "w": 4,
+        "x": 20,
+        "y": 0
+      },
+      "id": 16,
+      "interval": null,
+      "links": [],
+      "mappingType": 1,
+      "mappingTypes": [
+        {
+          "name": "value to text",
+          "value": 1
+        },
+        {
+          "name": "range to text",
+          "value": 2
+        }
+      ],
+      "maxDataPoints": 100,
+      "nullPointMode": "connected",
+      "nullText": null,
+      "postfix": "",
+      "postfixFontSize": "50%",
+      "prefix": "",
+      "prefixFontSize": "50%",
+      "rangeMaps": [
+        {
+          "from": "null",
+          "text": "N/A",
+          "to": "null"
+        }
+      ],
+      "sparkline": {
+        "fillColor": "rgba(31, 118, 189, 0.18)",
+        "full": false,
+        "lineColor": "rgb(31, 120, 193)",
+        "show": true
+      },
+      "tableColumn": "",
+      "targets": [
+        {
+          "groupBy": [],
+          "measurement": "Cisco-IOS-XR-ipv4-bgp-oper:bgp/instances/instance/instance-active/default-vrf/process-info",
+          "orderByTime": "ASC",
+          "policy": "autogen",
+          "query": "SELECT \"proto-route-count__active-routes-count\" FROM \"autogen\".\"Cisco-IOS-XR-ip-rib-ipv4-oper:rib/rib-table-ids/rib-table-id/summary-protos/summary-proto\" WHERE (\"Producer\" = '$Device') AND $timeFilter",
+          "rawQuery": false,
+          "refId": "A",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "vrf__path-count"
+                ],
+                "type": "field"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "Producer",
+              "operator": "=",
+              "value": "$Device"
+            },
+            {
+              "condition": "AND",
+              "key": "vrf-name",
+              "operator": "=",
+              "value": "default"
+            }
+          ]
+        }
+      ],
+      "thresholds": "1,2,3",
+      "title": "BGP Prefix Count",
       "type": "singlestat",
       "valueFontSize": "80%",
       "valueMaps": [
@@ -622,7 +828,7 @@
             [
               {
                 "params": [
-                  "bytes-sent"
+                  "bytes-received"
                 ],
                 "type": "field"
               },
@@ -652,7 +858,7 @@
       "thresholds": [],
       "timeFrom": null,
       "timeShift": null,
-      "title": "Bytes Sent",
+      "title": "Bytes Received",
       "tooltip": {
         "shared": true,
         "sort": 0,
@@ -888,7 +1094,7 @@
       "thresholds": [],
       "timeFrom": null,
       "timeShift": null,
-      "title": "Packets Sent",
+      "title": "Packets Received",
       "tooltip": {
         "shared": true,
         "sort": 0,
@@ -950,7 +1156,7 @@
     ]
   },
   "time": {
-    "from": "now-6h",
+    "from": "now-5m",
     "to": "now"
   },
   "timepicker": {
@@ -980,5 +1186,5 @@
   },
   "timezone": "",
   "title": "Device Health",
-  "version": 9
+  "version": 10
 }
