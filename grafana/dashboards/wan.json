@@ -702,6 +702,7 @@
       },
       "lines": true,
       "linewidth": 1,
+      "links": [],
       "nullPointMode": "null",
       "percentage": false,
       "pointradius": 5,
@@ -763,7 +764,7 @@
       "thresholds": [],
       "timeFrom": null,
       "timeShift": null,
-      "title": "Panel Title",
+      "title": "Traffic Rate",
       "tooltip": {
         "shared": true,
         "sort": 0,
@@ -835,5 +836,5 @@
   },
   "timezone": "",
   "title": "WAN Overview",
-  "version": 12
+  "version": 13
 }
