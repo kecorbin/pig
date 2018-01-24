@@ -130,6 +130,57 @@
 		}
 	},
 	{
+			"basepath" : "Cisco-IOS-XR-ipv4-bgp-oper:bgp/instances/instance/instance-active/default-vrf/process-info",
+			"spec" : {
+					"fields" : [
+							{"name" : "instance-name", "tag" : true},
+							{"name" : "vrf-name", "tag" : true},
+							{
+									"name" : "global",
+									"fields" : [
+											{"name" : "restart-count"},
+											{"name" : "nexthop-count"},
+											{"name" : "neighbors-count-total"},
+											{"name" : "established-neighbors-count-total"}
+									]
+							},
+							{
+									"name" : "vrf",
+									"fields" : [
+											{"name" : "neighbors-count"},
+											{"name" : "update-messages-received"},
+											{"name" : "path-count"},
+											{"name" : "network-count"}
+									]
+							},
+							{
+									"name" : "performance-statistics",
+									"fields" : [
+											{
+													"name" : "global",
+													"fields" : [
+															{"name" : "configuration-items-processed"},
+															{
+																	"name" : "ipv4rib-server",
+																	"fields" : [
+																			{"name" : "rib-connection-up-count"},
+																			{"name" : "is-rib-connection-up"}
+																	]
+															}
+													]
+											},
+											{
+													"name" : "vrf",
+													"fields" : [
+															{"name" : "inbound-update-messages"}
+													]
+											}
+									]
+							}
+					]
+			}
+	},
+	{
 		"basepath" : "Cisco-IOS-XR-nto-misc-oper:memory-summary/nodes/node/summary",
 		"spec" : {
 			"fields" : [
